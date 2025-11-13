@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import * as z from "zod";
 import { api } from "../state/api";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -373,9 +374,9 @@ async function uploadVideo(
       },
       body: file,
     });
-    toast.success(
-      `Video uploaded successfully for chapter ${chapter.chapterId}`
-    );
+    // toast.success(
+    //   `Video uploaded successfully for chapter ${chapter.chapterId}`
+    // );
 
     return { ...chapter, video: videoUrl };
   } catch (error) {
