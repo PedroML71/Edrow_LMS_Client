@@ -2,11 +2,11 @@ import NonDashboardNavbar from "@/components/NonDashboardNavbar";
 import { FC } from "react";
 import Footer from "@/components/Footer";
 
-interface LayoutPageProps {
+interface LayoutProps {
   children: React.ReactNode;
 }
 
-const LayoutPage: FC<LayoutPageProps> = ({ children }) => {
+const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="nondashboard-layout">
       <NonDashboardNavbar />
@@ -16,4 +16,4 @@ const LayoutPage: FC<LayoutPageProps> = ({ children }) => {
   );
 };
 
-export default LayoutPage;
+export default Layout;
