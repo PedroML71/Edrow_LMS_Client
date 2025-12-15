@@ -346,6 +346,9 @@ export const api = createApi({
         body: transaction,
       }),
     }),
+    getTransactions: build.query<Transaction[], string>({
+      query: (userId) => `transactions?userId=${userId}`,
+    }),
   }),
 });
 
@@ -355,4 +358,5 @@ export const {
   useUpdateUserMutation,
   useCreateStripePaymentIntentMutation,
   useCreateTransactionMutation,
+  useGetTransactionsQuery,
 } = api;
