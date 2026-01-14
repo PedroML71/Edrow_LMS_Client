@@ -22,7 +22,7 @@ const TeacherCourseCard: FC<TeacherCourseCardProps> = ({
       <CardHeader className="course-card-teacher__header">
         {course.image && (
           <Image
-            src={course.image}
+            src={course.image || "/placeholder.png"}
             alt={course.title}
             width={370}
             height={200}
@@ -65,12 +65,11 @@ const TeacherCourseCard: FC<TeacherCourseCardProps> = ({
           )}
         </div>
 
-        <div>
+        <div className="x-full xl:flex space-y-2 xl:space-y-0 gap-2 mt-3">
           {isOwner ? (
             <>
               <div>
                 <Button
-                  variant={"outline"}
                   className="course-card-teacher__edit-button"
                   onClick={() => onEdit(course)}
                 >
@@ -81,7 +80,6 @@ const TeacherCourseCard: FC<TeacherCourseCardProps> = ({
 
               <div>
                 <Button
-                  variant={"destructive"}
                   className="course-card-teacher__delete-button"
                   onClick={() => onDelete(course)}
                 >

@@ -11,6 +11,7 @@ const Footer: FC = ({}) => {
             key={item}
             href={`/${item.toLowerCase().replace(" ", "_")}`}
             className="footer__link"
+            scroll={false}
           >
             {item}
           </Link>

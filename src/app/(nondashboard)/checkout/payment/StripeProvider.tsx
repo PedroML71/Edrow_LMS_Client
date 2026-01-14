@@ -66,7 +66,7 @@ const StripeProvider: FC<StripeProviderProps> = ({ children }) => {
   if (!clientSecret) return <Loading />;
 
   return (
-    <Elements stripe={stripePromise} options={options}>
+    <Elements stripe={stripePromise} options={options} key={clientSecret}>
       {children}
     </Elements>
   );
